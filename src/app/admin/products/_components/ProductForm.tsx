@@ -74,13 +74,11 @@ export function ProductForm({ product }: { product?: Product | null }) {
         <Input type="file" id="image" name="image" required={product == null} />
         {product != null && (
           <Image
-            src={product.imagePath}
+            src={`/${product.imagePath}`}
             height="400"
             width="400"
             alt="Product Image"
-          >
-            {product.filePath}
-          </Image>
+          />
         )}
         {error.image && <div className="text-destructive">{error.image}</div>}
       </div>
